@@ -42,6 +42,10 @@ void Animal::makeSound() const {
     std::cout << "animal noises" << std::endl;
 }
 
+std::ostream &operator <<(std::ostream &output,Animal &anim){
+	output << "This animal's name is " << anim.name << " with an age of " << anim.age << " years." << std::endl;
+	return output;
+}
 
 
 // Implementations of Dog class methods
@@ -72,7 +76,10 @@ void Dog::makeSound() const {
     std::cout << "dog noises" << std::endl;
 }
 
-
+std::ostream &operator <<(std::ostream &output,Dog &anim){
+	output << "This dog's name is " << anim.getName() << " with an age of " << anim.getAge() << " years and is a breed of " << anim.breed<< "." << std::endl;
+	return output;
+}
 
 // Implementations of Cat class methods
 // Default constructor
@@ -100,4 +107,9 @@ void Cat::setColor(const std::string& color) {
 void Cat::makeSound() const {
 // TODO: Output the sound a cat makes
     std::cout << "cat noises" << std::endl;
+}
+
+std::ostream &operator <<(std::ostream &output,Cat &anim){
+	output << "This cat's name is " << anim.getName() << " with an age of " << anim.getAge() << " years and is colored " << anim.color << "." << std::endl;
+	return output;
 }
