@@ -20,6 +20,8 @@ public:
     void setAge(int age);
     // Virtual method makeSound()
     virtual void makeSound() const;
+    //Extraction overload for animal class
+    friend std::ostream &operator <<(std::ostream &output,Animal &anim);
 };
 
 // Derived class Dog
@@ -37,6 +39,8 @@ public:
     void setBreed(const std::string& breed);
     // Override makeSound()
     void makeSound() const override;
+    //Extaction operator overload for dog subclass
+    friend std::ostream &operator <<(std::ostream &output,Dog &anim);
 };
 
 // Derived class Cat
@@ -54,4 +58,7 @@ public:
     void setColor(const std::string& color);
     // Override makeSound()
     void makeSound() const override;
+    //Extraction operator overload for cat subclass
+    friend std::ostream &operator <<(std::ostream &output,Cat &anim);
 };
+
