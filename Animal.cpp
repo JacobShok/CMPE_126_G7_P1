@@ -100,11 +100,11 @@ void Cat::makeSound() const {
     std::cout << "cat noises" << std::endl;
 }
 
+// opp overloads
 std::ostream& operator<<(std::ostream& os, const Animal& animal) {
     os << "Name: " << animal.name << ", Age: " << animal.age << std::endl;
     return os;
 }
-
 std::istream& operator>>(std::istream& is, Animal& animal) {
     std::cout << "Enter name for animal: " << std::endl;
     is >> animal.name;
