@@ -18,11 +18,10 @@ int main() {
     cat.makeSound();
     // Additional testing
     // TODO: Set attributes using setters and test getters
+    std::cout << std::endl;
     std::cout << "test setters and getters" << std::endl;
-    genericAnimal.setName("Generic2");
-    genericAnimal.setAge(6);
-    std::cout << genericAnimal.getName() << std::endl;
-    std::cout << genericAnimal.getAge() << std::endl;
+    std::cin >> genericAnimal;
+    std::cout << genericAnimal;
 
     dog.setBreed("Labrador");
     std::cout << dog.getBreed() << std::endl;
@@ -31,6 +30,7 @@ int main() {
     std::cout << cat.getColor() << std::endl;
 
     // TODO: Test polymorphism if desired
+    std::cout << std::endl;
     std::cout  << "test polymorphism" << std::endl;
     std::vector<std::unique_ptr<Animal>> animals;
     animals.push_back(std::unique_ptr<Dog>(new Dog("teddy", 3, "poodle")));

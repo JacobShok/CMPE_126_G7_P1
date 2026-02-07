@@ -42,8 +42,6 @@ void Animal::makeSound() const {
     std::cout << "animal noises" << std::endl;
 }
 
-
-
 // Implementations of Dog class methods
 // Default constructor
 Dog::Dog() {
@@ -100,4 +98,17 @@ void Cat::setColor(const std::string& color) {
 void Cat::makeSound() const {
 // TODO: Output the sound a cat makes
     std::cout << "cat noises" << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& os, const Animal& animal) {
+    os << "Name: " << animal.name << ", Age: " << animal.age << std::endl;
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Animal& animal) {
+    std::cout << "Enter name for animal: " << std::endl;
+    is >> animal.name;
+    std::cout << "Enter age for animal: " << std::endl;
+    is >> animal.age;
+    return is;
 }

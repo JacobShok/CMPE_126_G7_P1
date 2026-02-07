@@ -20,6 +20,9 @@ public:
     void setAge(int age);
     // Virtual method makeSound()
     virtual void makeSound() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Animal& animal);
+    friend std::istream& operator>>(std::istream& is, Animal& animal);
 };
 
 // Derived class Dog
